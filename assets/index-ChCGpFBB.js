@@ -251,7 +251,7 @@ Error generating stack: `+o.message+`
         """
         ${e}
         """
-    `}],r=await(await fetch("https://api.openai.com/v1/chat/completions",{method:"POST",headers:{"Content-Type":"application/json",Authorization:"Bearer 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"},body:JSON.stringify({model:"gpt-3.5-turbo",messages:t,temperature:.7,max_tokens:1e3})})).json();return console.log("reponseDATA",r),r.choices[0].message.content};var U1={exports:{}};/*!
+    `}],r=await(await fetch("https://api.openai.com/v1/chat/completions",{method:"POST",headers:{"Content-Type":"application/json",Authorization:"Bearer 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"},body:JSON.stringify({model:"gpt-3.5-turbo",messages:t,temperature:.7,max_tokens:1e3})})).json();return console.log("reponseDATA",r),r.choices[0].message.content};var U1={exports:{}};/*!
 	Copyright (c) 2018 Jed Watson.
 	Licensed under the MIT License (MIT), see
 	http://jedwatson.github.io/classnames
