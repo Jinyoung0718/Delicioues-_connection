@@ -1,0 +1,108 @@
+.icons {
+  display: flex;
+  width: 1080px;
+  margin: auto;
+  list-style: none;
+}
+
+.icons li {
+  flex: 1;
+  background-color: #E2E2E2;
+  margin: 3rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+}
+
+.icons li:hover {
+  transform: scale(1.02); 
+}
+
+.image-container {
+  width: 100%;
+  object-fit: cover;
+  background-color: none;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.content {
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; 
+}
+
+.content p {
+  margin: 0;
+}
+
+/* 중간 크기 화면 (작은 데스크톱 또는 큰 태블릿) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .icons {
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .icons li {
+    margin: 1rem;
+    width: 100%; /* 아이템 너비를 100%로 변경 */
+  }
+
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* 중간 크기 화면 (태블릿) */
+@media (max-width: 768px) {
+  .icons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .icons li {
+    margin: 1rem 0;
+    width: 100%; /* 아이템 너비를 100%로 변경 */
+  }
+
+  .image-container {
+    width: 100%; /* 이미지 컨테이너 너비를 100%로 변경 */
+  }
+
+  .content {
+    padding: 0.5rem;
+  }
+}
+
+/* 작은 크기 화면 (모바일) */
+@media (max-width: 480px) {
+  .icons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .icons li {
+    margin: 0.5rem 0;
+    width: 100%; /* 아이템 너비를 100%로 변경 */
+  }
+
+  .image-container {
+    width: 100%; /* 이미지 컨테이너 너비를 100%로 변경 */
+  }
+
+  .content {
+    padding: 0.25rem;
+  }
+}
+

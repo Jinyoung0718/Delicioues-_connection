@@ -1,0 +1,53 @@
+.row__posters {
+    display: flex;
+    padding: 20px 0 20px 20px;
+    scroll-behavior: smooth;
+    border-radius: 5px;
+    height: 85%;
+  }
+
+  .image-container {
+    position: relative;
+    width: 100%;
+    object-fit:cover;
+  }
+  
+  .overlay-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 85%
+  }
+  
+  #title {
+    text-align: center;
+    font-weight: 300;
+    font-size: 150%
+  }
+
+  .swiper-pagination-bullet-active {
+    background: black !important;
+  }
+  
+  .swiper-button-prev {
+    color: black !important;
+  }
+  
+  .swiper-button-next {
+    color: black !important;
+  }
+  
+  .swiper-button-next:after, .swiper-button-prev:after{
+    font-size: 1.3rem !important;
+    font-weight: 800 !important;
+  }
+
+  #Ranking_Row {
+    max-width: 100%;
+  }

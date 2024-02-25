@@ -1,0 +1,30 @@
+.recipe-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 3rem; 
+    overflow-x: hidden;
+  }
+  
+  .recipe-item {
+    text-align: center;
+    width: 100%;
+    margin-top: 20%;
+    height: auto;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+  
+  .recipe-image {
+    margin: auto;
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .recipe-title {
+    margin: 0%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+  }
+  
