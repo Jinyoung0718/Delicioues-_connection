@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import styled from 'styled-components';
 
 export default function MyPage() {
@@ -44,7 +44,7 @@ const PageContainer = styled.div`
   padding: 20px;
   max-width: 1200px;
   margin: auto;
-  margin-top: 5vh;
+  margin-top: 5.5rem;
 `;
 
 const Title = styled.h1`
@@ -65,6 +65,7 @@ const RecipeCard = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   text-align: center;
+    width: 90%;
 `;
 
 const RecipeImage = styled.img`

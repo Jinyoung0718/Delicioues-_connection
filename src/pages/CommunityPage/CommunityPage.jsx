@@ -1,10 +1,13 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
 const CommunityBoard = () => {
   const [posts, setPosts] = useState([]);
+  const [showPostForm, setShowPostForm] = useState(false); 
   const [newPostTitle, setNewPostTitle] = useState('');
   const [newPostContent, setNewPostContent] = useState('');
+  const userEmail = useSelector((state) => state.user.userInfo.email);
 
   const handlePostSubmit = (e) => {
     e.preventDefault();
@@ -12,27 +15,33 @@ const CommunityBoard = () => {
     setPosts([...posts, newPost]);
     setNewPostTitle('');
     setNewPostContent('');
+    setShowPostForm(false); 
   };
 
   return (
     <Container>
-      <h1>Let`s cook community</h1>
-      <PostForm onSubmit={handlePostSubmit}>
-        <Input
-          type="text"
-          placeholder="제목"
-          value={newPostTitle}
-          onChange={(e) => setNewPostTitle(e.target.value)}
-          required
-        />
-        <Textarea
-          placeholder="내용"
-          value={newPostContent}
-          onChange={(e) => setNewPostContent(e.target.value)}
-          required
-        />
-        <Button type="submit">게시</Button>
-      </PostForm>
+      <h1>The culinary community</h1>
+      <p>Welcome! {userEmail}</p>
+      {showPostForm ? (
+        <PostForm onSubmit={handlePostSubmit}>
+          <Input
+            type="text"
+            placeholder="제목"
+            value={newPostTitle}
+            onChange={(e) => setNewPostTitle(e.target.value)}
+            required
+          />
+          <Textarea
+            placeholder="내용"
+            value={newPostContent}
+            onChange={(e) => setNewPostContent(e.target.value)}
+            required
+          />
+          <Button type="submit">POST</Button>
+        </PostForm>
+      ) : (
+        <Button onClick={() => setShowPostForm(true)}>write</Button>
+      )}
       <PostList>
         {posts.map((post, index) => (
           <Post key={index}>

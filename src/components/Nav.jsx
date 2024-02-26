@@ -51,13 +51,13 @@ export default function Nav() {
       />
       <div className='logo_container'>
         <Link to="/login">
-        <IoIosChatboxes size={'2.6rem'} color='black'/>
+        <IoIosChatboxes size={'2.4rem'} color='black'/>
         </Link>
         <Link to="/MyPage">
-        <FaUserAlt size={'2.2rem'} color='black' />
+        <FaUserAlt size={'2rem'} color='black' />
         </Link>
         <Link to="/recommed">
-        <PiCookingPotBold size={'2.6rem'} color='black'/>
+        <PiCookingPotBold size={'2.4rem'} color='black'/>
         </Link>
       </div>
     </nav>

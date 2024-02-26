@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import {useNavigate} from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import {Login} from './LoginAction';
+import {LoginWithUserInfo} from './LoginFunc';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
@@ -10,18 +9,16 @@ function LoginForm() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
-
-    const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
       e.preventDefault();
   
       try {
-          const response = await axios.post("http://localhost:3000/api/login", { email, password });
+          const response = await axios.post("http://localhost:3000/api/users/login", { email, password });
           console.log("Axios Response:", response);
               const userInfo = {email};
-              dispatch(Login(userInfo));
+              LoginWithUserInfo(userInfo);
               navigate('/community');
       } catch (error) {
           console.error("Login Error:", error);

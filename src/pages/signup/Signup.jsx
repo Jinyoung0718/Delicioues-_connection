@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { useDispatch } from 'react-redux';
-import {Signup} from '../login/LoginAction';
+import { SignupFunc } from '../login/LoginFunc';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
@@ -12,8 +11,6 @@ function SignupForm() {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
     const navigate = useNavigate();
-
-    const dispatch = useDispatch();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -28,9 +25,9 @@ function SignupForm() {
             return;
         }
         try {
-          const response = await axios.post('http://localhost:3000/api/signup', { email, password, confirmPassword });
+          const response = await axios.post('http://localhost:3000/api/users/signup', { email, password, confirmPassword });
           console.log(response);
-          dispatch(Signup());
+          SignupFunc();
           alert(response.data);
           navigate('/login'); 
       } catch (error) {

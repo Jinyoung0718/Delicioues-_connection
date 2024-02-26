@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Input, Button } from 'antd';
 import "./RecommendPage.css";
 import { CallGPT } from '../../api/CallGPT';
@@ -35,7 +35,7 @@ export default function RecommendPage() {
   return (
     <div className="app-container">
       <div className="app-title">
-        <h1>Combine the ingredients to create a recipe!</h1>
+        <h1 style={{fontSize: '3.3rem'}}>Combine the ingredients to create a recipe!</h1>
       </div>
       <div className="container">
         <TextArea
@@ -43,13 +43,14 @@ export default function RecommendPage() {
           value={userInput}
           onChange={handleUserInput}
           placeholder="Please enter the ingredients in order"
+          style={{width: '55rem'}}
         />
         <Button
           className="styled-button"
           loading={isLoading}
           onClick={handleSubmit}
         >
-          Let's Cook
+          Show Recipe
         </Button>
       </div>
       {data && (
