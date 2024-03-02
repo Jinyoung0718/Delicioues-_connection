@@ -1,16 +1,17 @@
 .recipe-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(5, 1fr); 
     gap: 3rem; 
     overflow-x: hidden;
+    user-select: none;
+    margin-top: 6.8rem;
   }
   
   .recipe-item {
     text-align: center;
     width: 100%;
-    margin-top: 20%;
     height: auto;
-    padding: 1rem;
+    padding: 0.7rem;
     border: 1px solid #ccc;
     border-radius: 10px;
   }

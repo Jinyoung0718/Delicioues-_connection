@@ -16,7 +16,7 @@ function LoginForm() {
   
       try {
           const response = await axios.post("http://localhost:3000/api/users/login", { email, password });
-          console.log("Axios Response:", response);
+          console.log(response);
               const userInfo = {email};
               LoginWithUserInfo(userInfo);
               navigate('/community');
@@ -29,7 +29,6 @@ function LoginForm() {
           }
       }
   };
-  
 
     return (
         <Container>
@@ -51,7 +50,7 @@ function LoginForm() {
                 />
                 {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
                 <Button type="submit">Login</Button>
-                <p> Don&apos;t have an account? <Link to="/signup">Signup here</Link></p>
+                <p> Don&apos;t have an account? <Link to="/signup">Sign up</Link></p>
             </Form>
         </Container>
     );
@@ -60,9 +59,10 @@ function LoginForm() {
 export default LoginForm;
 
 const Container = styled.div`
-  max-width: 400px;
+  max-width: 23rem;
   margin: 0 auto;
   padding: 20px;
+  user-select: none;
   text-align: center;
 `;
 
@@ -80,17 +80,18 @@ const Input = styled.input`
 
 const Button = styled.button`
   padding: 10px;
-  background-color: #007bff;
+  background-color: black;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 
   &:hover {
-    background-color: #0056b3;
+    background-color: #333;
   }
 `;
 
 const ErrorMessage = styled.p`
   color: red;
 `;
+

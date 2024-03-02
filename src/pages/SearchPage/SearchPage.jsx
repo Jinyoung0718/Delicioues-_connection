@@ -12,11 +12,14 @@ export default function SearchPage() {
 
   const useQuery = () => {
     console.log(useLocation());
+  // search: "?query=cookie"
     return new URLSearchParams(useLocation().search);
+  // new를 붙임으로써 URL 쿼리 문자열을 객체로 변환하기 위해  
   };
 
   let query = useQuery();
   const searchTerm = query.get("query");
+  // "cookie"
   const fetchSearchRecipe = async (searchTerm) => {
     try {
       const response = await spoonacularApi.get(
@@ -30,20 +33,13 @@ export default function SearchPage() {
     }
   };
 
-  useEffect(() => {
-    if (searchTerm) {
-      fetchSearchRecipe(searchTerm);
-    }
-  }, [searchTerm]); 
-
-
   const handleClick = (recipe) => {
     setIsModalOpen(true);
     setRecipeSelected(recipe); 
     console.log("recipe", recipe);
   };
 
-  const debouncedSearchTerm = useDebounce(searchTerm, 500);
+  const debouncedSearchTerm = useDebounce(searchTerm, 200);
 
   useEffect(() => {
     if (debouncedSearchTerm) {

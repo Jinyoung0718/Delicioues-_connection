@@ -20,6 +20,7 @@ export default function RecommendPage() {
       const messages = await CallGPT({
         prompt: `${userInput}`,
       });
+      // messages 변수에 CallGPT 함수에 프로퍼티를 넘겨서 결과값을 저장
       setData(JSON.parse(messages));
     } catch (error) {
       console.error("error", error);
@@ -43,7 +44,7 @@ export default function RecommendPage() {
           value={userInput}
           onChange={handleUserInput}
           placeholder="Please enter the ingredients in order"
-          style={{width: '55rem'}}
+          style={{width: '50rem'}}
         />
         <Button
           className="styled-button"

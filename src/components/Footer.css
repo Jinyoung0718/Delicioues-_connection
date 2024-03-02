@@ -4,6 +4,7 @@
     padding: 20px;
     text-align: center;
     margin-top: 3.5%;
+    user-select: none;
   }
   
   .footer-content {

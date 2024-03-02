@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Banner from '../../components/Banner';
 import Introduce from '../../components/Introduce'
 import RankingRow from '../../components/RankingRow';

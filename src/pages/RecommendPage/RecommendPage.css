@@ -13,14 +13,14 @@
   
   .styled-button {
     width: 150px;
-    background-color: #1890ff;
+    background-color: black;
     color: #fff;
     border: none;
     border-radius: 8px;
   }
   
   .styled-button:hover {
-    background-color: #096dd9;
+    background-color: #333;
   }
   
   .app-container {
@@ -32,14 +32,15 @@
     margin: auto;
     margin-top: 18vh;
     border-radius: 10px;
+    user-select: none;
   }
   
   .app-title {
-    font-weight: 400;
-    font-size: 30px;
+    font-weight: 350;
+    font-size: 2rem;
     text-align: center;
     font-family: "Noto Serif KR";
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
     color: #333;
   }
   

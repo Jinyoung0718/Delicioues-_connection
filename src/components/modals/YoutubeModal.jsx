@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 const YoutubeModal = (props) => { 
@@ -24,6 +23,20 @@ const YoutubeModal = (props) => {
 
 export default YoutubeModal;
 
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  user-select: none;
+  z-index: 4;
+`;
+
 const CloseButton = styled.button`
   position: absolute;
   top: 70px;
@@ -39,19 +52,6 @@ const Iframe = styled.iframe`
   width: 100%;
   height: 100%;
   border: none;
-`;
-
-const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 4;
 `;
 
 const HomeContainer = styled.div`

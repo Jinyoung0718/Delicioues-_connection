@@ -41,7 +41,7 @@ function SignupForm() {
 
     return (
         <Container>
-            <h1>Signup</h1>
+            <h1>Sign up</h1>
             <Form onSubmit={handleSubmit}>
                 <Input
                     type="email"
@@ -65,8 +65,8 @@ function SignupForm() {
                     required
                 />
                 {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
-                <Button type="submit">Signup</Button>
-                <p>Already have an account? <Link to="/login">Login here</Link></p>
+                <Button type="submit">Sign up</Button>
+                <p>Already have an account? <Link to="/login">Login</Link></p>
             </Form>
         </Container>
     );
@@ -75,9 +75,10 @@ function SignupForm() {
 export default SignupForm;
 
 const Container = styled.div`
-  max-width: 400px;
+  max-width: 23rem;
   margin: 0 auto;
   padding: 20px;
+  user-select: none;
   text-align: center;
 `;
 
@@ -96,7 +97,7 @@ const Input = styled.input`
 
 const Button = styled.button`
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: black;
   color: white;
   border: none;
   border-radius: 4px;
@@ -104,7 +105,7 @@ const Button = styled.button`
   transition: background-color 0.2s;
 
   &:hover {
-    background-color: #0056b3;
+    background-color: #333;
   }
 `;
 

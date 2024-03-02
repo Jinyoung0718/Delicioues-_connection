@@ -1,4 +1,3 @@
-import React from 'react';
 import './Introduce.css';
 import Introduce_1 from '../assets/Introduce_1.jpg';
 import Introduce_2 from '../assets/Introduce_2.jpg';

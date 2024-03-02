@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import spoonacularApi from '../api/spoonacularApi';
 import RecipeModal from './modals/RecipeModal';
 import { IoReloadSharp } from "react-icons/io5";
@@ -55,7 +55,7 @@ const handleRefresh = async () => {
     <section id='Ranking_Row'>
       <h3 id='title'>GlutenFree Diet</h3>
       <hr style={{ width: '300px' }} />
-    <div style={{ display: 'flex', justifyContent: 'flex-end', marginRight: '50px' }}>
+    <div style={{ display: 'flex', justifyContent: 'flex-end', marginRight: '50px'}}>
     <StyledReloadIcon onClick={handleRefresh} size={'1.4rem'} />
     </div>
       <Swiper
@@ -89,6 +89,7 @@ export default GlutenFreeRow;
 const Container = styled.div`
   border-radius: 2rem;
   overflow: hidden;
+  user-select :none;
 
   img {
     width: 100%;

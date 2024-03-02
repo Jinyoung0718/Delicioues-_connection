@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import logo from "../assets/logo.png";
 import { IoIosChatboxes } from "react-icons/io";
 import { PiCookingPotBold } from "react-icons/pi";
-import { FaUserAlt } from "react-icons/fa";
+import { IoMdHeart } from "react-icons/io";
 import "./Nav.css";
 import { useNavigate, Link } from "react-router-dom";
 
@@ -29,7 +29,7 @@ export default function Nav() {
 
   const handleChange = (e) => {
     setSearchValue(e.target.value);
-    navigate(`/search?query=${e.target.value}`);
+    navigate(`/search?query=${searchValue}`);
   };
 
 
@@ -54,7 +54,7 @@ export default function Nav() {
         <IoIosChatboxes size={'2.4rem'} color='black'/>
         </Link>
         <Link to="/MyPage">
-        <FaUserAlt size={'2rem'} color='black' />
+        <IoMdHeart size={'2.4rem'} color='black' />
         </Link>
         <Link to="/recommed">
         <PiCookingPotBold size={'2.4rem'} color='black'/>

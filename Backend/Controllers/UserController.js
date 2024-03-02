@@ -24,22 +24,20 @@ exports.signup = (req, res) => {
   connection.query(checkUserQuery, [email], (error, results) => {
     // Node.js에서는 콜백 함수의 첫 번째 매개변수로 오류를, 두 번째 매개변수로 성공 결과를 넘기는 것이 일반적인 관례
     if (error) {
-      console.error("Error checking user in database:", error);
-      return res.status(500).send("Error checking user in databse");
+      return res.status(500).send("Error checking user in databse"); // 500은 서버 잘못
     }
 
     if (results.length > 0) {
-      return res.status(400).send("User already exists with this email");
+      return res.status(400).send("User already exists with this email"); // 400은 너 잘못
     }
 
     const addUserQuery = "INSERT INTO users (email, password) VALUES (?, ?)";
-    connection.query(addUserQuery, [email, password], (error, results) => {
+    connection.query(addUserQuery, [email, password], (error) => {
       if (error) {
-        console.error("Error adding user to database:", error);
         return res.status(500).send("Error adding user to database");
       }
-      console.log("User added to database");
-      res.status(201).send("User created");
+
+      res.status(201).send("User created"); // 201은 성공 후 리소스, 200은 성공
     });
   });
 };
@@ -50,7 +48,6 @@ exports.login = (req, res) => {
   const getUserQuery = "SELECT * FROM users WHERE email = ? AND password = ?";
   connection.query(getUserQuery, [email, password], (error, results) => {
     if (error) {
-      console.error("Error fetching user from  database:", error);
       return res.status(500).send("Error fetching user from database");
     }
 

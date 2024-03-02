@@ -10,6 +10,7 @@
     transition: all 0.5s;
     z-index: 3;
     background-color: rgba(235, 228, 228, 0.582);
+    user-select: none;
 }
 
 .nav__black {
@@ -55,14 +56,19 @@
 
 
 @media (max-width: 1024px) {
+    .nav {
+        height: 1%;
+    }
+
     .nav__logo {
-        width: 60%;
+        width: 45%;
     }
     .nav__input {
         width: 25rem;
     }
     .logo_container svg {
-        margin-right: 2rem; 
+        width: 2rem;
+        height: 2rem;
     }
 }
 

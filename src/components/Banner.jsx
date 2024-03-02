@@ -1,6 +1,7 @@
 import banner_1 from '../assets/banner_1.jpg';
 import banner_2 from '../assets/banner_2.jpg';
 import banner_3 from '../assets/banner_3.jpg';
+import banner_4 from '../assets/banner_4.jpg';
 import "./Banner.css";
 import styled from 'styled-components';
 
@@ -21,7 +22,7 @@ export default function Banners({handleSlideClick}) {
         pagination={{ clickable: true }}
         loop={true}
         autoplay={{ delay: 4000, disableOnInteraction: false }} 
-        speed={5000} 
+        speed={2000} 
         effect="slide" 
       >
         <SwiperSlide onClick={() => handleSlideClick('E9-2laAbjug')}>
@@ -33,6 +34,9 @@ export default function Banners({handleSlideClick}) {
         <SwiperSlide onClick={() => handleSlideClick('Ezfwypj7RVE')}>
           <SlideImage src={banner_3} alt="새우 튀김 이미지 배너" />
         </SwiperSlide>
+        <SwiperSlide onClick={() => handleSlideClick('E9-2laAbjug')}>
+          <SlideImage src={banner_4} alt="초밥 이미지 배너" />
+        </SwiperSlide>
       </Swiper>
     </>
   );
@@ -40,25 +44,24 @@ export default function Banners({handleSlideClick}) {
 
 const SlideImage = styled.img`
   width: 100%;
-  height: 800px;
+  height: 48rem;
   object-fit: cover;
 
   &:hover {
     cursor: pointer;
   }
 
-  // 중간 크기 화면 (작은 데스크톱 또는 큰 태블릿)
   @media (max-width: 1024px) {
-    height: 600px;
+    height: 30rem;
   }
 
-  // 작은 화면 (태블릿)
+  // 태블릿
   @media (max-width: 768px) {
-    height: 500px;
+    height: 25rem;
   }
 
-  // 매우 작은 화면 (스마트폰)
+  // 스마트폰
   @media (max-width: 480px) {
-    height: 300px;
+    height: 20rem;
   }
 `;

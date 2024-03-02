@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import spoonacularApi from '../api/spoonacularApi';
 import RecipeModal from './modals/RecipeModal';
 import { IoReloadSharp } from "react-icons/io5";
@@ -90,6 +90,7 @@ export default VegetarianRow;
 const Container = styled.div`
   border-radius: 2rem;
   overflow: hidden;
+  user-select :none;
 
   img {
     width: 100%;

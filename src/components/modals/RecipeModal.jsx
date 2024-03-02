@@ -23,7 +23,7 @@ export default function RecipeModal({ id, image, summary, title, nutrition, exte
     if (isLiked) {
       newLikedRecipes = likedRecipes.filter(recipe => recipe.id !== id); // 좋아요를 한 번 더 누르면 해당 레시피만 로컬스테이지에 저장된 공간에서 제외시키기 위함
     } else {
-      newLikedRecipes = [...likedRecipes, {id, image, title}];
+      newLikedRecipes = [...likedRecipes, {id, image, title, summary, extendedIngredients}];
     }
     setLikedRecipes(newLikedRecipes);
     localStorage.setItem("likedRecipes", JSON.stringify(newLikedRecipes));
@@ -39,7 +39,7 @@ export default function RecipeModal({ id, image, summary, title, nutrition, exte
             <StyledSummary dangerouslySetInnerHTML={{ __html: summary }} />
           </LeftContent>
           <RightContent>
-            <ul style={{ marginTop: '20%' }}>
+          <ul style={{ marginTop: '20%' }}>
               {
                 ((extendedIngredients || nutrition.ingredients).map((ingredient, index) => (
                   <li key={index} style={{ padding: '2%', fontSize: '1.2rem', fontWeight: '300' }}>{ingredient.name}</li>
@@ -88,6 +88,7 @@ const ModalContent = styled.div`
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
   display: flex;
   flex-direction: column;
+  user-select: none;
 `;
 
 const FlexContainer = styled.div`
@@ -138,7 +139,7 @@ const LikeButton = styled.button`
   background: transparent;
   cursor: pointer;
   padding: 8px 16px;
-  border-radius: 10px;
+  border-radius: 4px;
   transition: all 0.3s ease;
 
   &:hover {
@@ -152,18 +153,18 @@ const LikeButton = styled.button`
 const CloseButton = styled.button`
   font-size: 1rem; 
   color: #333;
-  border: 2px solid #333;
+  border: 1px solid #333;
   background: transparent;
   cursor: pointer;
   padding: 8px 16px;
-  border-radius: 10px; 
+  border-radius: 4px; 
   transition: all 0.3s ease;
 
   &:hover {
     color: black;
     border-color: #666;
     background: #f0f0f0;
-    transform: scale(1.05);
+    transform: scale(1.02);
   }
 `;
 

@@ -1,4 +1,5 @@
 import { useState} from 'react';
+import RecipeModal from '../../components/modals/RecipeModal';
 import styled from 'styled-components';
 
 export default function MyPage() {
@@ -37,6 +38,9 @@ export default function MyPage() {
           <NoRecipesText>No liked recipes yet.</NoRecipesText>
         )}
       </RecipesGrid>
+      {isModalOpen && ( 
+        <RecipeModal {...selectedRecipe} setIsModalOpen={setIsModalOpen} /> 
+      )}
     </PageContainer>
   );
 }
@@ -44,6 +48,7 @@ const PageContainer = styled.div`
   padding: 20px;
   max-width: 1200px;
   margin: auto;
+  user-select: none;
   margin-top: 5.5rem;
 `;
 
