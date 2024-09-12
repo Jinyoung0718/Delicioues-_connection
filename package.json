@@ -23,7 +23,7 @@
     "firebase": "^10.6.0",
     "framer-motion": "^10.16.5",
     "mysql": "^2.18.1",
-    "mysql2": "^3.9.1",
+    "mysql2": "^3.9.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",
